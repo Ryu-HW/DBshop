@@ -46,12 +46,23 @@ public class OrdersController {
     }
 
     @PostMapping("/orders/create")
-    public String createOrder(@ModelAttribute Order order,@ModelAttribute OrderItemsDto orderItemsDto) {
+    public String createOrder(@ModelAttribute Order order,@RequestParam String product_name,@RequestParam String quantityString) {
+
         orderService.insertOrder(order);
 
-//        orderItemsDto.createOderItems();
 
-        return "redirect:/orders/show";
+
+        int prodId = orderItemsService.getProdIdByName(product_name);
+
+        double prodPrice = orderItemsService.getProdPriceByName(product_name);
+
+        int quantity = Integer.parseInt(quantityString);
+
+        OrderItemsDto orderItemsDto = new OrderItemsDto(order.getOrder_id(),prodId,quantity,prodPrice);
+
+        orderItemsService.createOderItems(orderItemsDto);
+
+        return "/orders/show";
     }
 
     @GetMapping("/orders/update/{order_id}")

@@ -11,4 +11,12 @@
     <insert id="insertOrderItems" parameterType="kr.co.DBshop.dto.order_items.OrderItemsDto">
         insert into order_items (order_id, product_id,quantity,price) values (#{orderId},#{productId},#{quantity},#{price})
     </insert>
+
+    <select id="selectProdIdByName">
+        select product_id from products where product_name = #{prodName}
+    </select>
+
+    <select id="selectProdPriceByName">
+        select price from products where product_name = #{prodName}
+    </select>
 </mapper>

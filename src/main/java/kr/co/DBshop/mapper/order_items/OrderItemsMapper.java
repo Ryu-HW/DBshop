@@ -10,4 +10,6 @@ public interface OrderItemsMapper {
 
     public List<OrderItemsDto> selectOrderItems(int orderId);
     public void insertOrderItems(OrderItemsDto orderItemsDto);
+    public int selectProdIdByName(String prodName);
+    public double selectProdPriceByName(String prodName);
 }

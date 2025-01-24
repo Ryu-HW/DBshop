@@ -7,12 +7,18 @@ import lombok.Setter;
 @Setter
 public class OrderItemsDto {
 
-    private int orderItemId;
+    private Integer orderItemId;
     private int orderId;
     private int productId;
     private int quantity;
     private double price;
 
 
-
+    public OrderItemsDto(int orderId, int productId, int quantity, double price) {
+        this.orderItemId = null;
+        this.orderId = orderId;
+        this.productId = productId;
+        this.quantity = quantity;
+        this.price = price;
+    }
 }

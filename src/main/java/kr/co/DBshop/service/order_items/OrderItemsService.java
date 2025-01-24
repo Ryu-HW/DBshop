@@ -18,8 +18,16 @@ public class OrderItemsService {
         return orderItemsMapper.selectOrderItems(orderId);
     }
 
-    public void createOrderItems(OrderItemsDto orderItemsDto){
+    public void createOderItems(OrderItemsDto orderItemsDto){
         orderItemsMapper.insertOrderItems(orderItemsDto);
+    }
+
+    public int getProdIdByName(String prodName){
+        return orderItemsMapper.selectProdIdByName(prodName);
+    }
+
+    public double getProdPriceByName(String prodName){
+        return orderItemsMapper.selectProdPriceByName(prodName);
     }
 
 }
