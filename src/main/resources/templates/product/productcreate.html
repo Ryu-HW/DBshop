@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>프로덕트 추가</h1>
+<form id="productForm" th:action="@{/products}" method="post" th:object="${productDto}">
+    <div>
+        <label for="product_name">상품:</label>
+        <input type="text" id="product_name" th:field="*{product_name}" required>
+    </div>
+
+    <div>
+        <label for="price">가격:</label>
+        <input type="number" id="price" th:field="*{price}" required>
+    </div>
+
+    <div>
+        <label for="stock_quantity">재고 수량:</label>
+        <input type="number" id="stock_quantity" th:field="*{stock_quantity}" required>
+    </div>
+
+    <div>
+        <label for="description">설명:</label>
+        <textarea id="description" th:field="*{description}"></textarea>
+    </div>
+
+    <div>
+        <label for="category_id">카테고리 ID:</label>
+        <input type="text" id="category_id" th:field="*{category_id}" required>
+    </div>
+
+    <button type="submit">상품추가</button>
+</form>
+</body>
+</html>

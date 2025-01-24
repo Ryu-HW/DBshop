@@ -1,0 +1,6 @@
+<mapper namespace="kr.co.DBshop.mapper.HelloMapper">
+    <insert id="insertProduct" parameterType="kr.co.DBshop.productDto.ProductDto">
+        INSERT INTO product_dto (product_id, product_name, price, stock_quantity, description, category_id)
+        VALUES (#{product_id}, #{product_name}, #{price}, #{stock_quantity}, #{description}, #{category.category_id});
+    </insert>
+</mapper>
