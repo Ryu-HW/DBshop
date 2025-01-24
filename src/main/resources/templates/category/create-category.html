@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>신규 카테고리 등록</title>
+</head>
+<body>
+<main>
+    <h1>신규 카테고리</h1>
+    <!-- th:action을 사용하여 서버 경로를 설정 -->
+    <form id="categoryForm" th:action="@{/category}" method="post">
+        <label for="category_name">추가할 카테고리명: </label>
+        <input type="text" id="category_name" name="category_name" required>
+
+        <button type="submit">카테고리 등록</button>
+    </form>
+</main>
+
+<!-- 외부 JavaScript 파일을 불러옴 -->
+<script th:src="@{/js/category.js}"></script>
+
+</body>
+</html>
