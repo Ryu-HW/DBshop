@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+오더한아이템정보
+<div th:each="orderItem : ${orderItems}">
+    <p th:text="${orderItem.price}"></p>
+</div>
+</body>
+</html>
