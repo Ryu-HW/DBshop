@@ -17,4 +17,9 @@ public class OrderItemsService {
     public List<OrderItemsDto> getOrderItems(int orderId){
         return orderItemsMapper.selectOrderItems(orderId);
     }
+
+    public void createOrderItems(OrderItemsDto orderItemsDto){
+        orderItemsMapper.insertOrderItems(orderItemsDto);
+    }
+
 }

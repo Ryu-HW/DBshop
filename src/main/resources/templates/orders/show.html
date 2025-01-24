@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Order List</title>
+</head>
+<body>
+<h1>Order List</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Order ID</th>
+        <th>User ID</th>
+        <th>Order Status</th>
+        <th>Total Amount</th>
+        <th>Shipping Address</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="order : ${orders}">
+        <td>
+            <a th:href="@{'/orders/detail/' + ${order.order_id}}" th:text="${order.order_id}"></a>
+        </td>
+        <td>
+            <a th:href="@{'/orders/detail/' + ${order.order_id}}" th:text="${order.user_id}"></a>
+        </td>
+        <td th:text="${order.order_status}"></td>
+        <td th:text="${order.total_amount}"></td>
+        <td th:text="${order.shipping_address}"></td>
+        <td>
+            <button th:attr="onclick='confirm(' + ${order.order_id} + ')'" >삭제</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<div>
+    <br/><a href="/orders/create">New Order</a>
+</div>
+
+<script>
+    function confirm(orderId) {
+        if (confirm("정말로 주문 ID " + orderId + "를 삭제하시겠습니까?")) {
+            window.location.href = '/orders/delete/' + orderId;
+        } else {
+            window.location.href = '/orders/show';
+        }
+    }
+</script>
+</body>
+</html>

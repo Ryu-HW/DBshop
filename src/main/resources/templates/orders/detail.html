@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Detail</title>
+</head>
+<body>
+<h1>Order Detail</h1>
+
+<div>
+    <h3>Order ID: <span th:text="${order.order_id}"></span></h3>
+    <p>User ID: <span th:text="${order.user_id}"></span></p>
+    <p>Order Status: <span th:text="${order.order_status}"></span></p>
+    <p>Total Amount: <span th:text="${order.total_amount}"></span></p>
+    <p>Shipping Address: <span th:text="${order.shipping_address}"></span></p>
+</div>
+
+<div>
+    <a th:href="@{'/orders/update/' + ${order.order_id}}">Update Order</a>
+</div>
+
+</body>
+</html>

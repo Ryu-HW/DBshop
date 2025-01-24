@@ -9,4 +9,5 @@ import java.util.List;
 public interface OrderItemsMapper {
 
     public List<OrderItemsDto> selectOrderItems(int orderId);
+    public void insertOrderItems(OrderItemsDto orderItemsDto);
 }
