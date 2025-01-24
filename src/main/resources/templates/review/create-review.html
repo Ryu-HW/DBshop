@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/base}"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>리뷰생성기</title>
+</head>
+<body>
+리뷰생성기
+<body>
+<!--<main layout:fragment="content">-->
+    <h1>구입처 등록</h1>
+    <form id="reviewForm" th:action="@{/reviews}" method="post" >
+        <label for="review_product_id">제품ID: </label>
+        <input type="text" id="review_product_id" name="product_id" required>
+<!--        클라이언트(자바스크립트)유효성검사-->
+<!--        <div>-->
+<!--            <span id="spaceError" class="error" style="display:none">공백에러</span>-->
+<!--            <span id="specialCharError" class="error" style="display:none">특수문자에러</span>-->
+<!--            <span id="startWithNumberError" class="error" style="display:none">숫자부터 입력하면안됨</span>-->
+<!--        </div>-->
+        <label for="review_user_id">유저ID(수정불가): </label>
+        <input type="text" id="review_user_id" name="user_id" value="1" readonly>
+        <label for="review_order_id">주문번호: </label>
+        <input type="text" id="review_order_id" name="order_id">
+        <label for="review_rating">별점(1:매우불만족 ~ 5:매우만족): </label>
+        <input type="number" min="1" max="5" step="1"  id="review_rating" name="rating">
+        <label for="review_content">내용: </label>
+        <input type="text" id="review_content" name="content">
+<!--        <label for="review_created_at">작성시간: </label>-->
+<!--        <input type="text" id="review_created_at" name="created_at" value="" readonly>-->
+        <button type="submit">제출하기</button>
+
+    </form>
+</main>
+
+<!--    <script th:src="@{/js/time.js}" defer></script>-->
+<script th:src="@{/js/review.js}" defer></script>
+
+</body>
+</html>

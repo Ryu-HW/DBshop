@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.co.DBshop.mapper.review.ReviewMapper">
+    <insert id="insertReview" parameterType="kr.co.DBshop.dto.review.ReviewDto">
+        insert into reviews(product_id,user_id,order_id,rating,content)
+        values(#{product_id},#{user_id},#{order_id},#{rating},#{content});
+    </insert>
+
+<!--    <select id="selectItemById" resultType="kr.co.DBshop.dto.review.ReviewDto">-->
+<!--        select * from items where id = #{id}-->
+<!--    </select>-->
+
+<!--    <select id="selectItems" resultType="kr.co.DBshop.dto.review.ReviewDto">-->
+<!--        &lt;!&ndash;        select * from items order by id;&ndash;&gt;-->
+<!--        select id, name from items order by id limit #{limit} offset #{offset}-->
+<!--    </select>-->
+
+<!--    <delete id="deleteItem">-->
+<!--        delete from items where id=#{id}-->
+<!--    </delete>-->
+
+<!--    <update id="updateItem" parameterType="kr.co.DBshop.dto.review.ReviewDto">-->
+<!--        update items set name = #{name} where id = #{id};-->
+<!--    </update>-->
+
+<!--    <select id="countTotal" resultType="Integer">-->
+<!--        select count(*) from items;-->
+<!--    </select>-->
+
+</mapper>
